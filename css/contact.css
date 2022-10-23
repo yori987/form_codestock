@@ -1,0 +1,314 @@
+@charset "UTF-8";
+
+/*----------------------------------------
+	お問合せ専用
+----------------------------------------*/
+
+/*必要なスタイルを適宜追加してください。
+他のページでも使用する汎用的なパーツはcommon.cssへ記述してください*/
+
+.contactTable {
+	border-bottom: 1px dashed #ccc;
+	width: 100%;
+}
+
+.contactTable tr {
+	border-top: 1px dashed #ccc;
+	height: auto;
+}
+
+.contactTable th {
+	width:32.4%;
+	padding:20px 40px 20px 0;
+	vertical-align: middle;
+}
+
+.contactTable td {
+	padding:20px 0;
+	vertical-align: middle;
+}
+
+.selectWrap {
+	position: relative;
+}
+
+.selectWrap::after{
+	position: absolute;
+	content:"";
+	right: 20px;
+	top:0;
+	bottom:0;
+	margin:auto;
+	display: block;
+	width:10px;
+	height: 10px;
+	border-right: 2px solid;
+	border-bottom: 2px solid;
+	transform: rotate(45deg);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+	-webkit-appearance: none;
+	appearance: none;/*初期設定を削除*/
+	width: 100%;
+	padding:10px 20px;
+	background-color: #fff;
+	border: 1px solid #707070;
+	border-radius: 4px;
+}
+
+textarea {
+	font-size: 16px;
+	font-weight: normal;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus,
+input[type="radio"]:focus + span ,
+input[type="checkbox"]:focus + span {
+	outline: none;
+	box-shadow: 0 0 6px rgba(55, 147, 47, 0.7);
+}
+
+.is-error input[type="text"] ,
+.is-error input[type="email"] ,
+.is-error input[type="tel"] ,
+.is-error textarea ,
+.is-error select ,
+.is-error .selectWrap{
+	color: #DF5656;
+	border-color: #DF5656;
+} 
+
+.errorText {
+	display: none;
+	color: #DF5656;
+	align-items: center;
+	margin-top:16px;
+	font-weight: bold;
+}
+
+.errorText::before {
+	content:"";
+	display: inline-block;
+	width:20px;
+	height: 20px;
+	margin-right:3px;
+	background: url(../img/icon_attention.svg) center center / contain no-repeat;
+	vertical-align: middle;
+}
+
+.inputFiled.is-error .errorText {
+	display: block;
+}
+
+
+.inputLabel {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.inputSubLabel {
+	display: block;
+	margin-bottom:8px;
+	font-weight: bold;
+}
+
+.inputNote {
+	font-size: 12px;
+	margin-top:10px;
+	color:#707070;
+}
+
+
+.required {
+	display: inline-block;
+	align-items: center;
+	margin-left:15px;
+	padding:0 10px;
+	background-color: #37952F;
+	color: #fff;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+/* ラジオボタン チェックボックス*/
+.radioList_hr {
+	display: flex;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	opacity: 0; /*透明にして見えなくする*/
+	position: absolute;/*本来の配置から切り離す*/
+}
+
+/* input[type="radio"]:focus + span ,
+input[type="checkbox"]:focus + span {
+	outline: 1px solid #ccc;
+} */
+
+/*クリック範囲*/
+
+input[type="radio"]+span,
+input[type="checkbox"]+span {
+	display: inline-block;
+	position: relative;
+	margin: 0 2em 0 0 ;
+	padding:0.3em 0.3em 0.3em 2em;
+	line-height: 1;
+	vertical-align: middle;
+	cursor:pointer;
+}
+
+input[type="checkbox"]+span {
+	padding:0.3em 0.3em 0.3em 3em;
+}
+
+/* ラジオボタンスタイル */
+
+input[type="radio"]+span::before {
+	content:"";
+	position: absolute;
+	top:0;
+	left:0;
+	width:25px;
+	height: 25px;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	line-height: 1;
+	background-color: #fff;
+}
+
+/* チェック印　未選択 */
+input[type="radio"]+span::after {
+	content:"";
+	display: none;
+}
+
+/* チェック印　選択 */
+input[type="radio"]:checked+span:after {
+	display: block;
+	position: absolute;
+	top:4px;
+	left:4px;
+	width:17px;
+	height: 17px;
+	margin: 0;
+	padding:0;
+	border-radius: 50%;
+	background-color: #37952F;
+	line-height: 1;
+}
+
+.privacyBox {
+	margin: 80px auto;
+	width:100%;
+	border: 1px solid #ccc;
+	padding:40px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.privacyBox p {
+	font-size: 15px;
+}
+
+.privacyCheck {
+	text-align: center;
+	margin-top:50px;
+}
+
+/* チェックボックススタイル */
+input[type="checkbox"]+span::before {
+	position: absolute;
+	top:0px;
+	left:0;
+	content:"";
+	width:25px;
+	height: 25px;
+	border: 1px solid #ccc;
+	line-height: 1;
+	vertical-align: middle;
+}
+
+/* チェックボックス未チェック */
+input[type="checkbox"]+span::after{
+	content:"";
+	display: none;
+}
+
+/* チェックボックスチェック時 */
+input[type="checkbox"]:checked+span::after {
+	display: block;
+	position: absolute;
+	top:0px;
+	left:7px;
+	width:10px;
+	height: 20px;
+	content:"";
+	border-bottom: 4px solid #37952F;
+	border-right: 4px solid #37952F;
+	transform: rotate(45deg);
+}
+
+
+
+
+
+@media screen and (min-width:768px),print {
+	.inputLabel {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.nameLayout {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.nameLayout > * {
+		width:48.68%;
+	}
+}
+
+@media screen and (max-width:767px),print {
+	.contactTable th {
+		display: block;
+		width:100%;
+		padding:20px 40px 15px 0;
+		vertical-align: middle;
+	}
+	
+	.contactTable td {
+		display: block;
+		width: 100%;
+		padding:0px 0 20px;
+		vertical-align: middle;
+	}
+
+	.nameLayout > :first-of-type {
+		margin-bottom:15px;
+	}
+
+	.privacyBox {
+		margin: 50px auto;
+		padding:20px;
+
+	}
+
+	input[type="checkbox"]+span {
+		padding:0.3em 0.3em 0.3em 2em;
+		margin:unset;
+	}
+
+
+}
