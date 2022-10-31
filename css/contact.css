@@ -260,6 +260,75 @@ input[type="checkbox"]:checked+span::after {
 }
 
 
+/* モーダルウィンドウ */
+
+/* モーダルCSS */
+.modalArea {
+  display: none;
+  position: fixed;
+  z-index: 100; /*サイトによってここの数値は調整 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30,30,30,0.9);
+}
+
+.modalWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  width: 70%;
+  max-width: 600px;
+  padding: 20px 30px 50px;
+  background-color: #fff;
+	
+}
+
+.modalContents__heading {
+	font-size: 20px;
+	font-weight: bold;
+	padding:10px 10px 10px 0;
+	text-align: start;
+}
+
+.modalContents__body {
+	border:1px solid #ccc;
+	/* スクロールさせる */
+	height : 300px; 
+  overflow : auto; 
+	text-align: start;
+	padding:10px;
+}
+
+.modalContents__ttl {
+	font-size: 16px;
+	font-weight: bold;
+	margin-top:10px;
+}
+
+.modalContents__text {
+	margin-top:10px;
+	margin-bottom:10px;
+	font-size: 16px;
+}
+
+.closeModal {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+
+
+
 
 
 
